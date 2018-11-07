@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,10 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+        prepareFont()
         let loginViewController = LoginViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.rootViewController = loginViewController
+    
         return true
     }
 
@@ -45,6 +49,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    private func prepareFont() {
+        guard var font = UIFont(name: "Roboto-BoldItalic", size: UIFont.labelFontSize) else {
+            print("FONT ERROR")
+            return
+        }
+        font = UIFontMetrics.default.scaledFont(for: font)
+        let labelAppearance = UILabel.appearance()
+        labelAppearance.font = font
+        
+        let textFieldAppearance = UITextField.appearance()
+        textFieldAppearance.font = font
+        
+        let textViewAppearance = UITextView.appearance()
+        textViewAppearance.font = font
+    }
 
 }
 

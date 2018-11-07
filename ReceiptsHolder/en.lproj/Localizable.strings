@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  ReceiptsHolder
+
+  Created by Jan Radzikowski on 02/11/2018.
+  Copyright © 2018 Jan Radzikowski. All rights reserved.
+*/
+
+"email" = "email";
+"password" = "password";
+"login" = "Login";
+"register" = "Register";
