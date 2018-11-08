@@ -32,9 +32,14 @@
 		056481CA218CE68200B352CE /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 056481BE218CE68200B352CE /* Roboto-Regular.ttf */; };
 		056481CB218CE68200B352CE /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 056481BF218CE68200B352CE /* Roboto-Thin.ttf */; };
 		056481D3218CEEB000B352CE /* Roboto-MediumItalic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 056481D2218CEEB000B352CE /* Roboto-MediumItalic.plist */; };
+		05A74692219439C6003EDACE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A74691219439C6003EDACE /* LoginViewModel.swift */; };
+		05A7469421943B3D003EDACE /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7469321943B3D003EDACE /* StringExtensions.swift */; };
+		05A7469621943E39003EDACE /* FirebaseModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7469521943E39003EDACE /* FirebaseModule.swift */; };
+		05A7469B21944CCC003EDACE /* GeneralModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7469A21944CCC003EDACE /* GeneralModel.swift */; };
 		05CF2DF62192385B00C037D1 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CF2DF52192385B00C037D1 /* Manager.swift */; };
 		05EC86452188570300E0FB4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05EC86442188570300E0FB4E /* GoogleService-Info.plist */; };
 		05EC8647218858C800E0FB4E /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EC8646218858C800E0FB4E /* ExampleView.swift */; };
+		05F572AC2194503E00732896 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F572AB2194503E00732896 /* Authentication.swift */; };
 		149B3F9722C4C9D614282C24 /* Pods_ReceiptsHolder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 106D8B33F5DC953A3DEEAE40 /* Pods_ReceiptsHolder.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,9 +72,14 @@
 		056481BE218CE68200B352CE /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../../../../../../../../Users/Radzik/Downloads/Roboto-2/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		056481BF218CE68200B352CE /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "../../../../../../../../../Users/Radzik/Downloads/Roboto-2/Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		056481D2218CEEB000B352CE /* Roboto-MediumItalic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Roboto-MediumItalic.plist"; path = "../../Fonts/Roboto-MediumItalic.plist"; sourceTree = "<group>"; };
+		05A74691219439C6003EDACE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		05A7469321943B3D003EDACE /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		05A7469521943E39003EDACE /* FirebaseModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModule.swift; sourceTree = "<group>"; };
+		05A7469A21944CCC003EDACE /* GeneralModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralModel.swift; sourceTree = "<group>"; };
 		05CF2DF52192385B00C037D1 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		05EC86442188570300E0FB4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Users/Radzik/Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		05EC8646218858C800E0FB4E /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
+		05F572AB2194503E00732896 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		106D8B33F5DC953A3DEEAE40 /* Pods_ReceiptsHolder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReceiptsHolder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4394CE190311FE928E5890E1 /* Pods-ReceiptsHolder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptsHolder.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReceiptsHolder/Pods-ReceiptsHolder.release.xcconfig"; sourceTree = "<group>"; };
 		B394D27A18F32A63BCFFAD8C /* Pods-ReceiptsHolder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptsHolder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReceiptsHolder/Pods-ReceiptsHolder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +134,7 @@
 				056481B2218CE60100B352CE /* ScaledFont.swift */,
 				052760462190942A00516D93 /* ScreenSize.swift */,
 				05CF2DF52192385B00C037D1 /* Manager.swift */,
+				05A7469321943B3D003EDACE /* StringExtensions.swift */,
 			);
 			path = ReceiptsHolder;
 			sourceTree = "<group>";
@@ -131,6 +142,7 @@
 		052769A82180734D00E07601 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				05A746972194443B003EDACE /* Firebase */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -147,6 +159,8 @@
 		052769AA2180734D00E07601 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				05A74691219439C6003EDACE /* LoginViewModel.swift */,
+				05A7469A21944CCC003EDACE /* GeneralModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,6 +190,15 @@
 				056481B6218CE68200B352CE /* Roboto-ThinItalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		05A746972194443B003EDACE /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				05A7469521943E39003EDACE /* FirebaseModule.swift */,
+				05F572AB2194503E00732896 /* Authentication.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		05EC8648218858D100E0FB4E /* Login */ = {
@@ -317,22 +340,26 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ReceiptsHolder/Pods-ReceiptsHolder-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05A7469B21944CCC003EDACE /* GeneralModel.swift in Sources */,
 				052760472190942A00516D93 /* ScreenSize.swift in Sources */,
 				0564819B218C5B0B00B352CE /* LoginViewController.swift in Sources */,
 				0564819D218C5B1800B352CE /* LoginView.swift in Sources */,
@@ -355,9 +383,13 @@
 				05276997218071D900E07601 /* AppDelegate.swift in Sources */,
 				056481A7218CDC0200B352CE /* GeneralView.swift in Sources */,
 				056481B3218CE60100B352CE /* ScaledFont.swift in Sources */,
+				05A7469621943E39003EDACE /* FirebaseModule.swift in Sources */,
+				05A74692219439C6003EDACE /* LoginViewModel.swift in Sources */,
 				05CF2DF62192385B00C037D1 /* Manager.swift in Sources */,
 				05EC8647218858C800E0FB4E /* ExampleView.swift in Sources */,
+				05A7469421943B3D003EDACE /* StringExtensions.swift in Sources */,
 				052769AF218073A100E07601 /* GeneralViewController.swift in Sources */,
+				05F572AC2194503E00732896 /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

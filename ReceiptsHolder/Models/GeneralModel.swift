@@ -7,3 +7,6 @@
 //
 
 import Foundation
+class GeneralModel {
+    let manager: Manager = Manager.shared()
+}

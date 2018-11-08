@@ -7,3 +7,17 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+import FirebaseAuth
+import Firebase
+class Authentication {
+    let user = Variable<User?>(nil)
+    
+    init() {
+        user.value = Auth.auth().currentUser
+        Auth.auth().addStateDidChangeListener { [weak self] auth, user in
+            self?.user.value = user
+        }
+    }
+}

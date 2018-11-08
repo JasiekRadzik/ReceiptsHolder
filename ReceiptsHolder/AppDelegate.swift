@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         prepareFont()
+//        Manager.shared().firebase.createUser(email: "radzikjasiek@gmail.com", password: "11111")
         let loginViewController = LoginViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()

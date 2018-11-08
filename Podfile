@@ -12,7 +12,12 @@ use_frameworks!
      pod 'CryptoSwift'
      pod 'RxSwift',    '~> 4.0'
      pod 'RxCocoa',    '~> 4.0'
+    
+# Firebase
      pod 'Firebase/Core'
+     pod 'Firebase/Auth'
+     pod 'Firebase/Database'
+     pod 'Firebase/Storage'
   end 
 
  # target 'YOUR_TESTING_TARGET' do

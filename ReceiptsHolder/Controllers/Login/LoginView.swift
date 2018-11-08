@@ -60,7 +60,10 @@ class LoginView: GeneralView {
     
     var emailTextField: UITextField = {
         let view = UITextField()
-        view.text = "@\(NSLocalizedString("email", comment: ""))"
+        view.tag = 1
+        view.keyboardType = UIKeyboardType.emailAddress
+        view.attributedPlaceholder = NSAttributedString(string: "@\(NSLocalizedString("email", comment: ""))", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        view.text = ""
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
         view.textColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -87,7 +90,9 @@ class LoginView: GeneralView {
     
     let passwordTextField: UITextField = {
         let view = UITextField()
-        view.text = "@\(NSLocalizedString("password", comment: ""))"
+        view.tag = 2
+        view.isSecureTextEntry = true
+        view.attributedPlaceholder = NSAttributedString(string: "@\(NSLocalizedString("password", comment: ""))", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
         view.textColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false

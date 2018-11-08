@@ -8,7 +8,15 @@
 
 import Foundation
 import UIKit
+import RxCocoa
+import RxSwift
+
 class LoginViewController: UIViewController {
+    
+    fileprivate let bag = DisposeBag()
+    
+    let loginViewModel = LoginViewModel()
+    
     var loginView: LoginView {
         return view as! LoginView
     }
@@ -19,6 +27,48 @@ class LoginViewController: UIViewController {
         view = contentView
         drawLayoutDependingOnScreenOrientation()
         addKeyboardObservers()
+        
+        bindUI()
+    }
+    
+    private func bindUI() {
+        _ = loginView.emailTextField.rx.text.map { $0 ?? "" }.bind(to: loginViewModel.emailText)
+        _ = loginView.passwordTextField.rx.text.map { $0 ?? ""}.bind(to: loginViewModel.passwordText)
+        
+        _ = loginViewModel.isValid.bind(to: loginView.loginButton.rx.isEnabled)
+        
+        loginViewModel.user
+            .asObservable()
+            .skip(1)
+            .subscribe { [unowned self] user in
+            if user.element != nil {
+                print("USER_EVENT - LoginViewController - logged in")
+            } else {
+                print("USER_EVENT - LoginViewController - not logged in")
+                self.loginView.loginButton.isEnabled = true
+            }
+        }.disposed(by: bag)
+        
+        loginView.emailTextField.rx.controlEvent([.editingDidEnd])
+            .asObservable()
+            .subscribe(onNext: { [unowned self] _ in
+                self.loginView.passwordTextField.becomeFirstResponder()
+        }).disposed(by: bag)
+        
+        loginView.passwordTextField.rx.controlEvent([.editingDidEnd])
+            .asObservable()
+            .subscribe(onNext: {[unowned self] _ in
+                self.loginView.passwordTextField.resignFirstResponder()
+        }).disposed(by: bag)
+        
+        loginView.loginButton.rx.controlEvent([.touchUpInside])
+            .asObservable()
+            .subscribe(onNext: { [unowned self] _ in
+                print("USER_EVENT - LoginViewController - login button pressed")
+                self.loginViewModel.login()
+                self.loginView.loginButton.isEnabled = false
+        }).disposed(by: bag)
+        
     }
     
     private func drawLayoutDependingOnScreenOrientation(){
