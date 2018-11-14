@@ -17,6 +17,8 @@ class LoginViewController: UIViewController {
     
     let loginViewModel = LoginViewModel()
     
+    let keyboardIsShowing = Variable<Bool>(false)
+    
     var loginView: LoginView {
         return view as! LoginView
     }
@@ -25,8 +27,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         let contentView = LoginView(frame: CGRect.zero)
         view = contentView
-        drawLayoutDependingOnScreenOrientation()
-        addKeyboardObservers()
         
         bindUI()
     }
@@ -69,6 +69,21 @@ class LoginViewController: UIViewController {
                 self.loginView.loginButton.isEnabled = false
         }).disposed(by: bag)
         
+        NotificationCenter.default.rx.notification(UIDevice.orientationDidChangeNotification)
+            .subscribe(onNext: { [unowned self] orientation in
+                self.drawLayoutDependingOnScreenOrientation()
+        }).disposed(by: bag)
+        
+        NotificationCenter.default.rx.notification(UIResponder.keyboardWillShowNotification)
+            .subscribe({ [unowned self] notification in
+                self.keyBoardWillShow(notification: notification.element)
+        }).disposed(by: bag)
+        NotificationCenter.default.rx.notification(UIResponder.keyboardWillHideNotification)
+            .subscribe({ [unowned self] notification in
+                self.keyBoardWillHide(notification: notification.element)
+        }).disposed(by: bag)
+        
+        
     }
     
     private func drawLayoutDependingOnScreenOrientation(){
@@ -90,21 +105,9 @@ class LoginViewController: UIViewController {
         }
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        drawLayoutDependingOnScreenOrientation()
-    }
-    
-    // keyboard
-    private func addKeyboardObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyBoardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyBoardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    
-    @objc func keyBoardWillShow(notification: NSNotification){
+    func keyBoardWillShow(notification: Notification?){
         var keyboardHeight: CGFloat = 200
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+        if let keyboardFrame: NSValue = notification?.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             keyboardHeight = (keyboardRectangle.height)
         }
@@ -114,7 +117,7 @@ class LoginViewController: UIViewController {
         loginView.scrollView.setNeedsUpdateConstraints()
     }
     
-    @objc func keyBoardWillHide(notification: NSNotification){
+    func keyBoardWillHide(notification: Notification?){
         loginView.scrollViewBottomConstraint.constant = 0
         loginView.scrollView.setNeedsUpdateConstraints()
     }

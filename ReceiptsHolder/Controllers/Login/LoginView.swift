@@ -127,6 +127,8 @@ class LoginView: GeneralView {
     let loginButton: UIButton = {
         let view = UIButton()
         view.setTitle(NSLocalizedString("login", comment: ""), for: .normal)
+        let pressedColor = UIColor(named: "GrayLight") ?? .gray
+        view.setTitleColor(pressedColor, for: .highlighted)
         view.setTitleColor(UIColor(named: "Amarant") ?? #colorLiteral(red: 0.5870615244, green: 0.0167502109, blue: 0.2885163724, alpha: 1), for: .normal)
         view.layer.cornerRadius = 25
         view.backgroundColor = .white
@@ -139,7 +141,10 @@ class LoginView: GeneralView {
         view.setTitle(NSLocalizedString("register", comment: ""), for: .normal)
         view.layer.cornerRadius = 25
         view.setTitleColor(.white, for: .normal)
+        let pressedColor = UIColor(named: "GrayLight") ?? .gray
+        view.setTitleColor(pressedColor, for: .highlighted)
         view.backgroundColor = UIColor(named: "LoginCredentialsViewTransparentBackgroundColor") ?? #colorLiteral(red: 0.005643308163, green: 0.07864312083, blue: 0.07901281863, alpha: 0.22)
+        
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

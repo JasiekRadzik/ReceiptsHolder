@@ -32,10 +32,13 @@
 		056481CA218CE68200B352CE /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 056481BE218CE68200B352CE /* Roboto-Regular.ttf */; };
 		056481CB218CE68200B352CE /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 056481BF218CE68200B352CE /* Roboto-Thin.ttf */; };
 		056481D3218CEEB000B352CE /* Roboto-MediumItalic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 056481D2218CEEB000B352CE /* Roboto-MediumItalic.plist */; };
+		05670433219CBFD8002EEEF2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05670432219CBFD8002EEEF2 /* MainViewController.swift */; };
+		05670436219CC031002EEEF2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05670435219CC031002EEEF2 /* MainView.swift */; };
 		05A74692219439C6003EDACE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A74691219439C6003EDACE /* LoginViewModel.swift */; };
 		05A7469421943B3D003EDACE /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7469321943B3D003EDACE /* StringExtensions.swift */; };
 		05A7469621943E39003EDACE /* FirebaseModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7469521943E39003EDACE /* FirebaseModule.swift */; };
 		05A7469B21944CCC003EDACE /* GeneralModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7469A21944CCC003EDACE /* GeneralModel.swift */; };
+		05CA1989217627C600141B13 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CA1988217627C600141B13 /* ViewExtensions.swift */; };
 		05CF2DF62192385B00C037D1 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CF2DF52192385B00C037D1 /* Manager.swift */; };
 		05EC86452188570300E0FB4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05EC86442188570300E0FB4E /* GoogleService-Info.plist */; };
 		05EC8647218858C800E0FB4E /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EC8646218858C800E0FB4E /* ExampleView.swift */; };
@@ -72,10 +75,14 @@
 		056481BE218CE68200B352CE /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../../../../../../../../Users/Radzik/Downloads/Roboto-2/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		056481BF218CE68200B352CE /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "../../../../../../../../../Users/Radzik/Downloads/Roboto-2/Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		056481D2218CEEB000B352CE /* Roboto-MediumItalic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Roboto-MediumItalic.plist"; path = "../../Fonts/Roboto-MediumItalic.plist"; sourceTree = "<group>"; };
+		05670430219CB991002EEEF2 /* Roboto-MediumItalic.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Roboto-MediumItalic.plist"; sourceTree = "<group>"; };
+		05670432219CBFD8002EEEF2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		05670435219CC031002EEEF2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		05A74691219439C6003EDACE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		05A7469321943B3D003EDACE /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		05A7469521943E39003EDACE /* FirebaseModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModule.swift; sourceTree = "<group>"; };
 		05A7469A21944CCC003EDACE /* GeneralModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralModel.swift; sourceTree = "<group>"; };
+		05CA1988217627C600141B13 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		05CF2DF52192385B00C037D1 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		05EC86442188570300E0FB4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Users/Radzik/Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		05EC8646218858C800E0FB4E /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
@@ -118,23 +125,17 @@
 		05276995218071D900E07601 /* ReceiptsHolder */ = {
 			isa = PBXGroup;
 			children = (
+				05CF2DF52192385B00C037D1 /* Manager.swift */,
 				056481D2218CEEB000B352CE /* Roboto-MediumItalic.plist */,
-				056481AB218CDD7F00B352CE /* Fonts */,
 				052769A82180734D00E07601 /* Api */,
 				052769A92180734D00E07601 /* Controllers */,
 				052769AA2180734D00E07601 /* Models */,
 				052769AB2180734D00E07601 /* Views */,
-				05276996218071D900E07601 /* AppDelegate.swift */,
-				05276998218071DA00E07601 /* ViewController.swift */,
-				0527699D218071DB00E07601 /* Assets.xcassets */,
+				0567042E219CB951002EEEF2 /* Supporting Files */,
+				056481AB218CDD7F00B352CE /* Fonts */,
 				0527699F218071DB00E07601 /* LaunchScreen.storyboard */,
 				05EC86442188570300E0FB4E /* GoogleService-Info.plist */,
 				052769A2218071DB00E07601 /* Info.plist */,
-				056481A3218CBD3B00B352CE /* Localizable.strings */,
-				056481B2218CE60100B352CE /* ScaledFont.swift */,
-				052760462190942A00516D93 /* ScreenSize.swift */,
-				05CF2DF52192385B00C037D1 /* Manager.swift */,
-				05A7469321943B3D003EDACE /* StringExtensions.swift */,
 			);
 			path = ReceiptsHolder;
 			sourceTree = "<group>";
@@ -150,8 +151,10 @@
 		052769A92180734D00E07601 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				05EC8648218858D100E0FB4E /* Login */,
 				052769AE218073A100E07601 /* GeneralViewController.swift */,
+				05670431219CBFBD002EEEF2 /* Example */,
+				05EC8648218858D100E0FB4E /* Login */,
+				05670434219CC006002EEEF2 /* Main */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 		056481AB218CDD7F00B352CE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				05670430219CB991002EEEF2 /* Roboto-MediumItalic.plist */,
 				056481BB218CE68200B352CE /* Roboto-Black.ttf */,
 				056481BA218CE68200B352CE /* Roboto-BlackItalic.ttf */,
 				056481B9218CE68200B352CE /* Roboto-Bold.ttf */,
@@ -192,6 +196,39 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		0567042E219CB951002EEEF2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0527699D218071DB00E07601 /* Assets.xcassets */,
+				05276996218071D900E07601 /* AppDelegate.swift */,
+				05276998218071DA00E07601 /* ViewController.swift */,
+				056481A3218CBD3B00B352CE /* Localizable.strings */,
+				056481B2218CE60100B352CE /* ScaledFont.swift */,
+				052760462190942A00516D93 /* ScreenSize.swift */,
+				05A7469321943B3D003EDACE /* StringExtensions.swift */,
+				05CA1988217627C600141B13 /* ViewExtensions.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		05670431219CBFBD002EEEF2 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				052769AC2180735B00E07601 /* ExampleViewController.swift */,
+				05EC8646218858C800E0FB4E /* ExampleView.swift */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		05670434219CC006002EEEF2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				05670432219CBFD8002EEEF2 /* MainViewController.swift */,
+				05670435219CC031002EEEF2 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		05A746972194443B003EDACE /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,8 +241,6 @@
 		05EC8648218858D100E0FB4E /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				052769AC2180735B00E07601 /* ExampleViewController.swift */,
-				05EC8646218858C800E0FB4E /* ExampleView.swift */,
 				0564819A218C5B0B00B352CE /* LoginViewController.swift */,
 				0564819C218C5B1800B352CE /* LoginView.swift */,
 			);
@@ -379,6 +414,7 @@
 				0564819B218C5B0B00B352CE /* LoginViewController.swift in Sources */,
 				0564819D218C5B1800B352CE /* LoginView.swift in Sources */,
 				052769AD2180735B00E07601 /* ExampleViewController.swift in Sources */,
+				05670436219CC031002EEEF2 /* MainView.swift in Sources */,
 				05276999218071DA00E07601 /* ViewController.swift in Sources */,
 				05276997218071D900E07601 /* AppDelegate.swift in Sources */,
 				056481A7218CDC0200B352CE /* GeneralView.swift in Sources */,
@@ -386,8 +422,10 @@
 				05A7469621943E39003EDACE /* FirebaseModule.swift in Sources */,
 				05A74692219439C6003EDACE /* LoginViewModel.swift in Sources */,
 				05CF2DF62192385B00C037D1 /* Manager.swift in Sources */,
+				05CA1989217627C600141B13 /* ViewExtensions.swift in Sources */,
 				05EC8647218858C800E0FB4E /* ExampleView.swift in Sources */,
 				05A7469421943B3D003EDACE /* StringExtensions.swift in Sources */,
+				05670433219CBFD8002EEEF2 /* MainViewController.swift in Sources */,
 				052769AF218073A100E07601 /* GeneralViewController.swift in Sources */,
 				05F572AC2194503E00732896 /* Authentication.swift in Sources */,
 			);
