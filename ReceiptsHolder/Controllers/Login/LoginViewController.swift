@@ -59,13 +59,15 @@ class LoginViewController: UIViewController {
             }
         }.disposed(by: bag)
         
-        loginView.emailTextField.rx.controlEvent([.editingDidEnd])
+        loginView.emailTextField.rx
+            .controlEvent([.editingDidEnd])
             .asObservable()
             .subscribe(onNext: { [weak self] _ in
                 self?.loginView.passwordTextField.becomeFirstResponder()
         }).disposed(by: bag)
         
-        loginView.passwordTextField.rx.controlEvent([.editingDidEnd])
+        loginView.passwordTextField.rx
+            .controlEvent([.editingDidEnd])
             .asObservable()
             .subscribe(onNext: { [weak self] in
                 self?.loginView.passwordTextField.resignFirstResponder()
@@ -81,21 +83,24 @@ class LoginViewController: UIViewController {
         
         _ = loginView.registerButton.rx
             .tap
-            .throttle(05, latest: false, scheduler: MainScheduler.instance).subscribe { [weak self] _ in
+            .throttle(0.5, latest: false, scheduler: MainScheduler.instance).subscribe { [weak self] _ in
                 self?.pushViewController(viewController: RegisterViewController())
         }
         
-        NotificationCenter.default.rx.notification(UIDevice.orientationDidChangeNotification)
+        NotificationCenter.default.rx
+            .notification(UIDevice.orientationDidChangeNotification)
             .subscribe(onNext: { [weak self] orientation in
                 self?.drawLayoutDependingOnScreenOrientation()
         }).disposed(by: bag)
         
-        NotificationCenter.default.rx.notification(UIResponder.keyboardWillShowNotification)
+        NotificationCenter.default.rx
+            .notification(UIResponder.keyboardWillShowNotification)
             .subscribe({ [weak self] notification in
                 self?.keyBoardWillShow(notification: notification.element)
         }).disposed(by: bag)
         
-        NotificationCenter.default.rx.notification(UIResponder.keyboardWillHideNotification)
+        NotificationCenter.default.rx
+            .notification(UIResponder.keyboardWillHideNotification)
             .subscribe({ [weak self] notification in
                 self?.keyBoardWillHide(notification: notification.element)
         }).disposed(by: bag)
