@@ -23,14 +23,18 @@ class LoginViewModel: GeneralModel {
         }
     }
     
-    func login() {
+    override init() {
+        super.init()
         _ = manager.firebase.auth.user
             .asObservable()
-            .skip(1)
+            .throttle(2, latest: false, scheduler: MainScheduler.instance)
             .subscribe { [unowned self] user in
-            self.user.value = user.element ?? nil
+                self.user.value = user.element ?? nil
             }.disposed(by: bag)
         
+    }
+    
+    func login() {
         manager.firebase.signIn(email: emailText.value, password: passwordText.value)
     }
 }

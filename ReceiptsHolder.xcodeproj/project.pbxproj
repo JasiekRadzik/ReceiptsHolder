@@ -14,6 +14,8 @@
 		052769A1218071DB00E07601 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0527699F218071DB00E07601 /* LaunchScreen.storyboard */; };
 		052769AD2180735B00E07601 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052769AC2180735B00E07601 /* ExampleViewController.swift */; };
 		052769AF218073A100E07601 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052769AE218073A100E07601 /* GeneralViewController.swift */; };
+		052BEBFA219D558A00182073 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052BEBF9219D558A00182073 /* RegisterViewController.swift */; };
+		052BEBFD219D55BA00182073 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052BEBFC219D55BA00182073 /* RegisterView.swift */; };
 		0564819B218C5B0B00B352CE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564819A218C5B0B00B352CE /* LoginViewController.swift */; };
 		0564819D218C5B1800B352CE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564819C218C5B1800B352CE /* LoginView.swift */; };
 		056481A1218CBD3B00B352CE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 056481A3218CBD3B00B352CE /* Localizable.strings */; };
@@ -56,6 +58,8 @@
 		052769A2218071DB00E07601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		052769AC2180735B00E07601 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		052769AE218073A100E07601 /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
+		052BEBF9219D558A00182073 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		052BEBFC219D55BA00182073 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		0564819A218C5B0B00B352CE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0564819C218C5B1800B352CE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		056481A2218CBD3B00B352CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 				052769AE218073A100E07601 /* GeneralViewController.swift */,
 				05670431219CBFBD002EEEF2 /* Example */,
 				05EC8648218858D100E0FB4E /* Login */,
+				052BEBFB219D558F00182073 /* Register */,
 				05670434219CC006002EEEF2 /* Main */,
 			);
 			path = Controllers;
@@ -174,6 +179,15 @@
 				056481A6218CDC0200B352CE /* GeneralView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		052BEBFB219D558F00182073 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				052BEBF9219D558A00182073 /* RegisterViewController.swift */,
+				052BEBFC219D55BA00182073 /* RegisterView.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		056481AB218CDD7F00B352CE /* Fonts */ = {
@@ -412,6 +426,7 @@
 				05A7469B21944CCC003EDACE /* GeneralModel.swift in Sources */,
 				052760472190942A00516D93 /* ScreenSize.swift in Sources */,
 				0564819B218C5B0B00B352CE /* LoginViewController.swift in Sources */,
+				052BEBFD219D55BA00182073 /* RegisterView.swift in Sources */,
 				0564819D218C5B1800B352CE /* LoginView.swift in Sources */,
 				052769AD2180735B00E07601 /* ExampleViewController.swift in Sources */,
 				05670436219CC031002EEEF2 /* MainView.swift in Sources */,
@@ -420,6 +435,7 @@
 				056481A7218CDC0200B352CE /* GeneralView.swift in Sources */,
 				056481B3218CE60100B352CE /* ScaledFont.swift in Sources */,
 				05A7469621943E39003EDACE /* FirebaseModule.swift in Sources */,
+				052BEBFA219D558A00182073 /* RegisterViewController.swift in Sources */,
 				05A74692219439C6003EDACE /* LoginViewModel.swift in Sources */,
 				05CF2DF62192385B00C037D1 /* Manager.swift in Sources */,
 				05CA1989217627C600141B13 /* ViewExtensions.swift in Sources */,

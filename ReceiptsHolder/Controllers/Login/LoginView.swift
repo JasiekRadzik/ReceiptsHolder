@@ -466,7 +466,7 @@ class LoginView: GeneralView {
     private func changeVarsDependingOnIphoneType() {
         switch iphoneType {
         case .Medium:
-            imagePortraitTopMargin = 70
+            imagePortraitTopMargin = 20
             imagePortraitHeightWidth = 140
             imagePortraitHeightWidth = 140
             credentialsStackPortraitTopMargin = 60

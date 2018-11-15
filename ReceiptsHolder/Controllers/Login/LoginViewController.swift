@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     
     let loginViewModel = LoginViewModel()
     
-    let keyboardIsShowing = Variable<Bool>(false)
+    let keyboardWillShow = Variable<Bool>(false)
     
     var loginView: LoginView {
         return view as! LoginView
@@ -27,8 +27,17 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         let contentView = LoginView(frame: CGRect.zero)
         view = contentView
-        
+        styleNavBar()
         bindUI()
+    }
+    
+    private func styleNavBar() {
+        if let navigationController = self.parent as? UINavigationController {
+            navigationController.navigationBar.barTintColor = UIColor(named: "Amarant") ?? #colorLiteral(red: 0.5870615244, green: 0.0167502109, blue: 0.2885163724, alpha: 1)
+            navigationController.navigationBar.isTranslucent = false
+            navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            navigationController.navigationBar.shadowImage = UIImage()
+        }
     }
     
     private func bindUI() {
@@ -40,50 +49,60 @@ class LoginViewController: UIViewController {
         loginViewModel.user
             .asObservable()
             .skip(1)
-            .subscribe { [unowned self] user in
+            .subscribe { [weak self] user in
             if user.element != nil {
                 print("USER_EVENT - LoginViewController - logged in")
+                self?.pushViewController(viewController: MainViewController())
             } else {
                 print("USER_EVENT - LoginViewController - not logged in")
-                self.loginView.loginButton.isEnabled = true
+                self?.loginView.loginButton.isEnabled = true
             }
         }.disposed(by: bag)
         
         loginView.emailTextField.rx.controlEvent([.editingDidEnd])
             .asObservable()
-            .subscribe(onNext: { [unowned self] _ in
-                self.loginView.passwordTextField.becomeFirstResponder()
+            .subscribe(onNext: { [weak self] _ in
+                self?.loginView.passwordTextField.becomeFirstResponder()
         }).disposed(by: bag)
         
         loginView.passwordTextField.rx.controlEvent([.editingDidEnd])
             .asObservable()
-            .subscribe(onNext: {[unowned self] _ in
-                self.loginView.passwordTextField.resignFirstResponder()
+            .subscribe(onNext: { [weak self] in
+                self?.loginView.passwordTextField.resignFirstResponder()
         }).disposed(by: bag)
         
-        loginView.loginButton.rx.controlEvent([.touchUpInside])
-            .asObservable()
-            .subscribe(onNext: { [unowned self] _ in
+        loginView.loginButton.rx
+            .tap
+            .throttle(3, latest: false, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in
                 print("USER_EVENT - LoginViewController - login button pressed")
-                self.loginViewModel.login()
-                self.loginView.loginButton.isEnabled = false
+                self?.loginViewModel.login()
         }).disposed(by: bag)
+        
+        _ = loginView.registerButton.rx
+            .tap
+            .throttle(05, latest: false, scheduler: MainScheduler.instance).subscribe { [weak self] _ in
+                self?.pushViewController(viewController: RegisterViewController())
+        }
         
         NotificationCenter.default.rx.notification(UIDevice.orientationDidChangeNotification)
-            .subscribe(onNext: { [unowned self] orientation in
-                self.drawLayoutDependingOnScreenOrientation()
+            .subscribe(onNext: { [weak self] orientation in
+                self?.drawLayoutDependingOnScreenOrientation()
         }).disposed(by: bag)
         
         NotificationCenter.default.rx.notification(UIResponder.keyboardWillShowNotification)
-            .subscribe({ [unowned self] notification in
-                self.keyBoardWillShow(notification: notification.element)
+            .subscribe({ [weak self] notification in
+                self?.keyBoardWillShow(notification: notification.element)
         }).disposed(by: bag)
+        
         NotificationCenter.default.rx.notification(UIResponder.keyboardWillHideNotification)
-            .subscribe({ [unowned self] notification in
-                self.keyBoardWillHide(notification: notification.element)
+            .subscribe({ [weak self] notification in
+                self?.keyBoardWillHide(notification: notification.element)
         }).disposed(by: bag)
-        
-        
+    }
+    
+    fileprivate func pushViewController(viewController: UIViewController) {
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     private func drawLayoutDependingOnScreenOrientation(){

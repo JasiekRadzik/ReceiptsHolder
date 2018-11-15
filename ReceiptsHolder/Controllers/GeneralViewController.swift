@@ -8,6 +8,17 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
+
 class GeneralViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bindUI()
+    }
+    
+    private func bindUI() {
+      
+    }
 }

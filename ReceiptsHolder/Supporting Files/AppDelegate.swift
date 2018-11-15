@@ -20,11 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         prepareFont()
 //        Manager.shared().firebase.createUser(email: "radzikjasiek@gmail.com", password: "11111")
-        let loginViewController = LoginViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = loginViewController
-    
+        let loginViewController = LoginViewController()
+        let navigationController = UINavigationController(rootViewController: loginViewController)
+        self.window?.rootViewController = navigationController
+
         return true
     }
 
